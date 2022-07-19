@@ -35,12 +35,13 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (res, req) => {
     // Pull todo from a form.
+    console.log(req.body);
     const { todo } = req.body;
 
     if (todo.trim().length === 0) {
         return res.status(400).json({ error: 'Todo must be valid.' });
     }
-    const insertTodoQuery = 'INSERT INTO todos (todo) VALUES(?);';
+    const insertTodoQuery = 'INSERT INTO todos (todo) VALUES (?);';
     const getTodoById = 'SELECT * FROM todos WHERE id = ? LIMIT 1;';
 
     try {
