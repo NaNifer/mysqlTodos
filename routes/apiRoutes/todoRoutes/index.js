@@ -33,7 +33,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.post('/', async (res, req) => {
+router.post('/', async (req, res) => {
     // Pull todo from a form.
     console.log(req.body);
     const { todo } = req.body;
